@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Profile
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="ProfileAttrs == undefined">
+    <img src="../../assets/icon/GD.gif" />
+  </div>
+  <ion-row>
+    <div *ngFor="let attr of ProfileAttrs">
+      <div *ngIf="attr.Key == 'new_legalname'" style="float:right;color:blueviolet;margin-right:5px;">
+        <h4>{{attr.Value}}</h4>
+      </div>
+      <div *ngIf="attr.Key == 'organizationid'">
+        {{attr.Value.Name}}
+      </div>   
+      <div *ngIf="attr.Key == 'new_designation'">
+        {{attr.Value.Name}}
+      </div>           
+    </div>
+  </ion-row>
+</ion-content>

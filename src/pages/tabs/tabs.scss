@@ -1,0 +1,11 @@
+page-tabs{
+    .tabs-md .tab-button[aria-selected=true]{
+        color: #a5a;
+        padding: 0;
+    }    
+    .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+        color: #a5a;
+        -webkit-transform: translate3d(0, -2px, 0);
+        transform: translate3d(0, -2px, 0);
+    }    
+}
