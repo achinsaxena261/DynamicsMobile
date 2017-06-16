@@ -21,8 +21,9 @@
       </ion-row>
       <ion-row>
         <ion-col class="signup-col">
-          <!--<button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Login</button>-->
-          <button ion-button class="submit-btn" (click)="Login(id,pwd)" full>Login</button>
+          <button ion-button class="submit-btn" (click)="Login(id,pwd);" [disabled]="!registerForm.form.valid" full>
+            Login
+          </button>
           <button ion-button class="register-btn" block clear>Create New Account</button>
         </ion-col>
       </ion-row>

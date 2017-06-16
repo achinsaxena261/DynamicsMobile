@@ -12,15 +12,19 @@ import 'rxjs/Rx';
 export class LoginPage {
   id:string;
   pwd:string;
+  submitted : boolean;
   constructor(public navCtrl: NavController,private dynamicService:dynamicService) {
+    this.submitted = false;
   }
 
   public Login(id: string, pwd: string) {
+    this.submitted = true;
     this.dynamicService.loginService(id,pwd)
     .subscribe(data=>this.ValidateUser(data));
   }
 
   ValidateUser(data:any){
+    this.submitted = false;
     if(data == "success"){
       this.navCtrl.push(TabsPage);
     }

@@ -13,17 +13,27 @@
   <div *ngIf="ProfileAttrs == undefined">
     <img src="../../assets/icon/GD.gif" />
   </div>
-  <ion-row>
-    <div *ngFor="let attr of ProfileAttrs">
-      <div *ngIf="attr.Key == 'new_legalname'" style="float:right;color:blueviolet;margin-right:5px;">
-        <h4>{{attr.Value}}</h4>
-      </div>
-      <div *ngIf="attr.Key == 'organizationid'">
-        {{attr.Value.Name}}
-      </div>   
-      <div *ngIf="attr.Key == 'new_designation'">
-        {{attr.Value.Name}}
-      </div>           
-    </div>
-  </ion-row>
+  <ion-grid *ngIf="ProfileAttrs != undefined">
+    <ion-row>
+      <ion-col col-4>
+        <img src="../../assets/icon/dummy.png" />
+      </ion-col>
+      <ion-col col-8 class="center-align">
+        <h4>{{UserInfo.name}}</h4>
+        <b>{{UserInfo.designation}}</b>
+      </ion-col>      
+    </ion-row>
+    <ion-row>
+      <ion-col col-5 class="profile-labels">Organization : </ion-col>
+      <ion-col col-7>
+        {{UserInfo.organization}}
+      </ion-col>      
+    </ion-row>  
+    <ion-row>
+      <ion-col col-5 class="profile-labels">Work Location : </ion-col>
+      <ion-col col-7>
+        {{UserInfo.location}}
+      </ion-col>      
+    </ion-row>            
+  </ion-grid>
 </ion-content>
